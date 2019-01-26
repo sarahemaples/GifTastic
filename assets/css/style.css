@@ -1,0 +1,19 @@
+* {
+    padding: 10px;
+}
+
+body {
+    width: 960px;
+    background-color: black;
+    margin: 0 auto;
+    color: aliceblue;
+}
+
+/* #btns-here,
+#gifs-appear-here {
+    margin: auto;
+} */
+
+.gifBtn {
+    margin: 5px;
+}
