@@ -62,7 +62,12 @@ $(document).ready(function(){
                     // display the static image of the gif
                     var gifImage = $("<img>");
                     gifImage.attr("src", results[i].images.original_still.url);
-                    gifImage.attr("id", "gif-"+i);
+
+                    // save the moving img as the value so it is easier to grab later
+                    gifImage.attr("value", results[i].images.fixed_height.url);
+
+                    // add id 
+                    gifImage.attr("id", "gif-"+search+"-"+i);
 
                     // add gifImg class
                     gifImage.addClass("gifImg");
@@ -82,11 +87,18 @@ $(document).ready(function(){
 // originally the static image is displayed. on click we want to animate the gif
 // on next click we want the static image to be displayed
 
-    // boolean to track which click we are on
-    var firstClick = true; 
-    $("#gifs-appear-here").on("click", "gifImg", function(){
-        if (firstClick){
-            $(this).attr
-        }
+    $("#gifs-appear-here").on("click", ".gifImg", function(){
+        // grab id of image clicked on
+        var gifClicked = $(this);
+        // console.log($(imgID));
+
+        // we want to switch the src and value so we need to store some temporary values and switch them around
+        var tempsrc = $(gifClicked).attr("value");
+        var tempVal = $(gifClicked).attr("src");
+
+        $(gifClicked).attr("src", tempsrc);
+        $(gifClicked).attr("value", tempVal);
+
+        console.log(tempVal, tempsrc);
     });
 });
