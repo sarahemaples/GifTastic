@@ -1,19 +1,29 @@
-* {
-    padding: 10px;
-}
-
 body {
-    width: 960px;
+
     background-color: black;
-    margin: 0 auto;
     color: aliceblue;
+    font-family: 'Major Mono Display', monospace;
 }
 
-/* #btns-here,
-#gifs-appear-here {
-    margin: auto;
-} */
+p {
+    text-align: center;
+}
 
+.gif-div {
+    padding: 10px;
+    background-color: #7777;
+    margin: 7px;
+    border: solid #777777;
+}
+
+#gifs-appear-here {
+    padding: 10px;
+    /* margin-left: 5px; */
+}
+
+#userInput {
+    width: 80%;
+}
 .gifBtn {
     margin: 5px;
 }

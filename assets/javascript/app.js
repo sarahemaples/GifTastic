@@ -3,8 +3,13 @@ $(document).ready(function(){
 //user input will be added to the array as well
     var topics = ["red","orange","yellow","green","blue","indigo","violet"];
 
+    //array of colors for the buttons
+    var colors = ["OrangeRed", "Orange", "Yellow", "Lime", "Aqua", "Fuchsia", "DarkViolet"];
+    var colIndex = 0;
+
 //function to create buttons
     function createBtns(arr){
+        colIndex = 0;
         // clear the div so we don't duplicate buttons when we add a button
         $("#btns-here").empty();
         // loop through arr and create buttons for each item
@@ -16,6 +21,12 @@ $(document).ready(function(){
             // also i added a class to all them
             tempBtn.addClass("gifBtn");
             // console.log(tempBtn);
+            //i want the buttons to be different colors
+            tempBtn.attr("style", "background-color: "+colors[colIndex]);
+            colIndex++;
+            if (colIndex == colors.length){
+                colIndex = 0;
+            };
             //display buttons on screen
             $("#btns-here").append(tempBtn);
         }
@@ -55,6 +66,11 @@ $(document).ready(function(){
                 for (var i = 0; i < 10; i++) {
                     //create new div for each gif
                     var gifDiv = $("<div>");
+                    
+                    // add class
+                    gifDiv.addClass("gif-div");
+                    gifDiv.addClass("card");
+
                     // display rating
                     var rating = results[i].rating;
                     var p = $("<p>").text("Rating: " + rating);
@@ -68,6 +84,9 @@ $(document).ready(function(){
 
                     // add id 
                     gifImage.attr("id", "gif-"+search+"-"+i);
+
+                    //set width
+                    gifImage.attr("width", "100%");
 
                     // add gifImg class
                     gifImage.addClass("gifImg");
