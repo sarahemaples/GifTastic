@@ -5,6 +5,12 @@ body {
     font-family: 'Major Mono Display', monospace;
 }
 
+#title {
+    background-color: black;
+    text-align: center;
+    font-size: 3em;
+}
+
 p {
     text-align: center;
 }
